@@ -1,0 +1,8 @@
+<div class="grid" infinite-scroll (scrolled)="onScrollDown()">
+  <tot-card 
+    *ngFor="let house of houses" 
+    [id]="house.id" 
+    [name]="house.name" 
+    [color]="house.color">
+  </tot-card>
+</div>
