@@ -20,3 +20,4 @@ export interface House {
   swornMembers: Url[];
   color: string;
 }
+

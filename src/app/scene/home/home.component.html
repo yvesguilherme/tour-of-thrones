@@ -3,6 +3,7 @@
     *ngFor="let house of houses" 
     [id]="house.id" 
     [name]="house.name" 
-    [color]="house.color">
+    [color]="house.color"
+    (click)="routeToHouse($event)">
   </tot-card>
 </div>

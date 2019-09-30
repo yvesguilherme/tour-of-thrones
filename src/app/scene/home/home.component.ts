@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { House } from 'src/app/type/Houses';
-import { IceAndFireService } from 'src/app/service/service.module';
+import { IceAndFireService } from 'src/app/service/ice-and-fire.service';
 
 @Component({
   selector: 'tot-home',
@@ -8,14 +10,19 @@ import { IceAndFireService } from 'src/app/service/service.module';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
   pageNum = 1;
   houses: House[] = [];
 
-  constructor(private service: IceAndFireService) { }
+  constructor(private service: IceAndFireService, private router: Router) { }
 
   ngOnInit() {
     this.getHouses();
+  }
+
+  routeToHouse(event: { id: number }) {
+    if (event.id) {
+      this.router.navigate([{ outlets: { modal: ['house', event.id] } }]);
+    }
   }
 
   getHouses(pageNum = 1) {

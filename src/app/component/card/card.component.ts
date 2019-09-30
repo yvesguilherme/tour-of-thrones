@@ -6,7 +6,6 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent {
-
   @Input() id: Number;
   @Input() name: string;
   @Input() color: string;

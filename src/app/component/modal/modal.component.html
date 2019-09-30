@@ -1,0 +1,7 @@
+<div id="open-modal" class="modal-window">
+  <div class="wrapper">
+    <ng-content select="[modal-loader]"></ng-content>
+    <ng-content select="[modal-content]"></ng-content>
+    <span title="Close" class="modal-close grow" (click)="closeModal()">&times;</span>
+  </div>
+</div>

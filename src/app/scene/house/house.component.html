@@ -1,0 +1,25 @@
+<tot-modal (modalClose)="modalClose()">
+  <div modal-loader *ngIf="!house; else houseContent" class="loader-container">
+    <tot-loader></tot-loader>
+  </div>
+  <ng-template #houseContent modal-content>
+    <div class="container">
+      <h1>{{house.name}}</h1>
+      <div *ngIf="house.words !== ''" class="subheading">{{house.words}}</div>
+      <div class="info" [ngClass]="(house.words === '') ? 'info-large-margin' : 'info-small-margin'">
+        <div class="detail">
+          <p class="caption">Coat of Arms</p>
+          <p class="body">{{house.coatOfArms === '' ? '?' : house.coatOfArms}}</p>
+        </div>
+        <div class="detail">
+          <p class="caption">Region</p>
+          <p class="body">{{house.region === '' ? '?' : house.region}}</p>
+        </div>
+        <div class="detail">
+          <p class="caption">Founded</p>
+          <p class="body">{{house.founded === '' ? '?' : house.founded}}</p>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</tot-modal>

@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { House } from '../type/Houses';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class IceAndFireService {
 
   baseUrl: string;
@@ -17,7 +15,7 @@ export class IceAndFireService {
     return this.http.get<House[]>(`${this.baseUrl}/houses?page=${page}`);
   }
 
-  fetchHouse(id: number){
+  fetchHouse(id: number) {
     return this.http.get<House>(`${this.baseUrl}/houses/${id}`);
   }
 

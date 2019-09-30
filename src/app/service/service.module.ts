@@ -16,4 +16,4 @@ export class ServicesModule {
   }
 }
 
-export { IceAndFireService };
+export { IceAndFireService }
